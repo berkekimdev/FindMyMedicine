@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#root {
+  width: 100%; /* Ekranın tam genişliğini kaplaması için */
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ekranın tam boyutunu kaplar */
+  width: 100%;
+  padding-bottom: 60px; /* Footer yüksekliği kadar alt padding */
+}
+
+.content {
+  flex: 1;
+  padding: 0; /* İçeriğe padding ekleyin */
+  width: 100%; /* Ekranın tam genişliğini kaplaması için */
+}
+..main-content {
+  flex-grow: 1; /* Tüm kullanılabilir alanı kaplar */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover; /* SVG'nin orantılı olarak genişlemesini sağlar */
+  width: 100%;
+  padding-bottom: var(--footer-height); /* Navbar yüksekliğini düşünerek yer ayarlayın */
+}

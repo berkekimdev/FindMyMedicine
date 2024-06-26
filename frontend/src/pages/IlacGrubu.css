@@ -1,0 +1,23 @@
+/* src/components/IlacGrubu.css */
+.ilac-gruplari-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ilac-grup-kutu {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px; /* Kutucukların arasına boşluk bırakmak için */
+}
+
+.ilac-grup-kutu:hover {
+  background-color: #218838;
+}
