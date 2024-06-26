@@ -1,6 +1,6 @@
 # README EKLENECEK (şimdilik sadece sistemin fotoğraflarını ekliyorum)
-Backend: Spring Boot 
-Frontend: React JS
+### Backend: Spring Boot 
+### Frontend: React JS
 ![GenelSayfa1.JPG](https://github.com/berkekimdev/FindMyMedicine/blob/main/images/GenelSayfa1.JPG)
 
 
