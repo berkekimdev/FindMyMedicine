@@ -1,6 +1,10 @@
 # README EKLENECEK (şimdilik sadece sistemin fotoğraflarını ekliyorum)
 ### Backend: Spring Boot 
 ### Frontend: React JS
+### Dockerfile ve Kubernetes Dosyaları
+
+Dockerfile ve Kubernetes yapılandırma dosyalarına ulaşmak için [bu linke](https://github.com/berkekimdev/DockercomposeandKubernetesYamls) tıklayabilirsiniz.
+
 ![GenelSayfa1.JPG](https://github.com/berkekimdev/FindMyMedicine/blob/main/images/GenelSayfa1.JPG)
 
 
