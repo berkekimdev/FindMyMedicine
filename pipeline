@@ -1,0 +1,48 @@
+pipeline {
+    agent any
+    environment {
+        registry = "sudkostik/vodafone"
+        registryCredential = 'dockerhub_id'
+        dockerImage = ''
+    }
+    tools {
+        dockerTool 'docker_latest'
+    }
+    stages {
+        stage('Initialize Docker CLI') {
+            steps {
+                script {
+                    def dockerHome = tool 'docker_latest'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
+            }
+        }
+        stage('Cloning our Git') {
+            steps {
+                git branch: 'newbranch', url: 'https://github.com/berkekimdev/ilacimibul.git'
+            }
+        }
+        stage('Building our image') {
+            steps {
+                script {
+                    dockerImage = docker.build("${registry}:${env.BUILD_NUMBER}")
+                }
+            }
+        }
+        stage('Deploy our image') {
+            steps {
+                script {
+                    docker.withRegistry('', registryCredential) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+        stage('Cleaning up') {
+            steps {
+                // Docker image'ını temizlemek için 'docker rmi' komutu kullanılıyor
+                sh "docker rmi ${registry}:${env.BUILD_NUMBER}"
+            }
+        }
+    }
+}
